@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yiJ-0Y-xcL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Collection View Controller-->
+        <scene sceneID="jn8-Co-fAN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dq7-rd-GCg" customClass="CollectionViewController" customModule="DeckOfCardsAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="6p3-n0-tiW"/>
+                        <viewControllerLayoutGuide type="bottom" id="eF3-j1-Cum"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="pll-KG-FKJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IU1-G0-NNx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yxs-kY-Jlh">
+                                    <size key="itemSize" width="115" height="113"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="aND-fn-Jhh" customClass="CustomCollectionViewCell" customModule="DeckOfCardsAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="115" height="113"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="113"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-5h-MsG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="113"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="U6W-5h-MsG" firstAttribute="width" secondItem="aND-fn-Jhh" secondAttribute="width" id="49A-c9-Atd"/>
+                                            <constraint firstItem="U6W-5h-MsG" firstAttribute="centerY" secondItem="aND-fn-Jhh" secondAttribute="centerY" id="cEq-Fd-jPn"/>
+                                            <constraint firstItem="U6W-5h-MsG" firstAttribute="centerX" secondItem="aND-fn-Jhh" secondAttribute="centerX" id="oz9-Gf-Yev"/>
+                                            <constraint firstItem="U6W-5h-MsG" firstAttribute="height" secondItem="aND-fn-Jhh" secondAttribute="height" id="r4d-8s-lWk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="U6W-5h-MsG" id="hPR-uH-CIE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dq7-rd-GCg" id="lgr-Br-rKT"/>
+                                    <outlet property="delegate" destination="dq7-rd-GCg" id="Mbo-uT-c1m"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IU1-G0-NNx" firstAttribute="centerX" secondItem="pll-KG-FKJ" secondAttribute="centerX" id="COj-kP-b1u"/>
+                            <constraint firstItem="IU1-G0-NNx" firstAttribute="centerY" secondItem="pll-KG-FKJ" secondAttribute="centerY" id="Mcn-zN-8vp"/>
+                            <constraint firstItem="IU1-G0-NNx" firstAttribute="width" secondItem="pll-KG-FKJ" secondAttribute="width" id="XjD-Hb-cBB"/>
+                            <constraint firstItem="IU1-G0-NNx" firstAttribute="height" secondItem="pll-KG-FKJ" secondAttribute="height" id="Z8F-KE-xI2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0eD-eD-8PD">
+                        <barButtonItem key="rightBarButtonItem" title="New Deck" id="yZs-68-1tT">
+                            <connections>
+                                <action selector="newDeckButtonPressed:" destination="dq7-rd-GCg" id="YY4-kq-ur1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="IU1-G0-NNx" id="MGy-YD-evp"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBm-wz-1Pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="722" y="332"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KUa-AH-j6x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yiJ-0Y-xcL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF6-6h-yaf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dq7-rd-GCg" kind="relationship" relationship="rootViewController" id="kEw-Pp-JWI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSZ-qN-5Om" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="332"/>
         </scene>
     </scenes>
 </document>
